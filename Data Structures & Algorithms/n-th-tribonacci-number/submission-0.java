@@ -22,7 +22,6 @@ class Solution {
             w = x + y + z;
             index++;
         }
-        System.out.println(w);
         return w;
     }
 }
