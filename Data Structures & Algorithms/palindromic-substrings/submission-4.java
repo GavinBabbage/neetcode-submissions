@@ -1,0 +1,24 @@
+class Solution {
+    public static int countSubstrings(String s) {
+        int count = 0;
+        int n = s.length();
+
+        for (int center = 0; center < n; center++) {
+            int left = center;
+            int right = center;
+            while (left >= 0 && right < n && s.charAt(left) == s.charAt(right)) {
+                count++;
+                left--;
+                right++;
+            }   
+            left = center;
+            right = center + 1;
+            while (left >= 0 && right < n && s.charAt(left) == s.charAt(right)) {
+                count++;
+                left--;
+                right++;
+            }
+        }
+        return count;
+    }
+}
